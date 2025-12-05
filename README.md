@@ -43,13 +43,42 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+FULL ADDER
+module ha_dataflow(a, b, s, ca);
+    input a;
+    input b;
+    output s;
+    output ca;
+	 assign#2 s=a^b;
+	 assign#2 ca=a&b;
+endmodule
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+FULL SUBTRACTOR
+module hs_behv(a, b, dif, bor);
+    input a;
+    input b;
+    output dif;
+    output bor;
+	 reg dif,bor;
+	 reg abar;
+	 always@(a or b) begin
+	 abar=~a;
+	 dif=a^b;
+	 bor=b&abar;
+	 end
+endmodule
+
+
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:SHRUTHILAYA.A RegisterNumber:25018192
 */
 
 **RTL Schematic**
+<img width="1920" height="1080" alt="Screenshot 2025-12-04 211846" src="https://github.com/user-attachments/assets/79e2a7dd-21d2-491f-a27f-0612d3f17e97" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/186f2084-b55c-4b5b-9337-1da343407a57" />
 
 **Output Timing Waveform**
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/115b6757-8e81-4616-84d5-2998b0f5b9f0" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/83b786dd-9050-4be7-9ead-547a915eb0f9" />
 
 **Result:**
 
